@@ -3,7 +3,7 @@ from ast import Sub
 from tokenize import String
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField, SelectField, EmailField
-from wtforms.validators import DataRequired, URL, Email
+from wtforms.validators import DataRequired, URL
 
 
 SIGNAL = [0, 1, 2, 3, 4, 5]
@@ -24,13 +24,13 @@ class CafeForm(FlaskForm):
     
 class RegisterForm(FlaskForm):
     name = StringField(label="Full name", validators=[DataRequired()])
-    email = EmailField(label="Email", validators=[DataRequired(), Email()])
+    email = StringField(label="Email", validators=[DataRequired()])
     password = PasswordField(label="Password", validators=[DataRequired()])
     password_re = PasswordField(label="Re-enter password", validators=[DataRequired()])
     submit = SubmitField(label="Register")
     
 class SignInForm(FlaskForm):
-    email = EmailField(label="Email", validators=[DataRequired()], render_kw={'placeholder':'example@mail.com'})
+    email = StringField(label="Email", validators=[DataRequired()], render_kw={'placeholder':'example@mail.com'})
     password = PasswordField(label="Password", validators=[DataRequired()])
     submit = SubmitField(label="Login")
 
