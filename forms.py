@@ -2,7 +2,7 @@
 from ast import Sub
 from tokenize import String
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField, SelectField, EmailField
+from wtforms import StringField, SubmitField, PasswordField, SelectField
 from wtforms.validators import DataRequired, URL
 
 
